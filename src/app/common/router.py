@@ -1,6 +1,5 @@
-from fastapi import APIRouter
-
 from app.common.models import SimpleMessageResponse
+from fastapi import APIRouter
 
 router = APIRouter()
 
@@ -10,5 +9,5 @@ async def home():
 
 # For k8s healthiness probe
 @router.get("/healthz", response_model=SimpleMessageResponse)
-async def home():
+async def health():
     return {"message": "OK"}

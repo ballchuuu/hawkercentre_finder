@@ -11,4 +11,5 @@ class Sqlite3:
         # create function
         self.conn.create_function("get_distance", 5, get_distance)
 
-sqlite3 = Sqlite3()
+
+sqlite3_client = Sqlite3()

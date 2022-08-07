@@ -1,9 +1,8 @@
-from app.core.sqlite.client import sqlite3
-from app.core.logger import logger
 from app.core.config import settings
-
-from app.nearest_hawkercentre.models import InputLatLon
+from app.core.logger import logger
+from app.core.sqlite.client import sqlite3_client
 from app.nearest_hawkercentre.models import HawkerCentre
+from app.nearest_hawkercentre.models import InputLatLon
 from app.nearest_hawkercentre.models import NearestHawkerCentre
 
 def get_nearest_hawkercentre(
@@ -11,8 +10,8 @@ def get_nearest_hawkercentre(
 ) -> NearestHawkerCentre:
 
     # SQL query to return nearest hawker centre by geodesic distance
-    query = f'''  
-        SELECT 
+    query = f'''
+        SELECT
             name,
             photourl
         FROM {settings.hawkercentre_table_name}
@@ -25,8 +24,8 @@ def get_nearest_hawkercentre(
         LIMIT {input.num_hawkercentres}
     '''
     try:
-        sqlite3.cur.execute(query)
-        sql_result = sqlite3.cur.fetchall()
+        sqlite3_client.cur.execute(query)
+        sql_result = sqlite3_client.cur.fetchall()
     except Exception as e:
         logger.error(f"SQLITE3 | {e} | {query}")
         # return empty list if error
@@ -35,4 +34,3 @@ def get_nearest_hawkercentre(
     results = [HawkerCentre(name=r[0], photourl=r[1]) for r in sql_result]
 
     return NearestHawkerCentre(results=results)
-

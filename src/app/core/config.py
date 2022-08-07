@@ -6,10 +6,11 @@ class Settings(BaseSettings):
     ##
     log_level: str = "INFO"
 
-    ### 
+    ###
     # Sqlite database
     ###
     database_name: str = "app//core//sqlite//database.db"
     hawkercentre_table_name = "hawkercentre"
+
 
 settings = Settings()

@@ -1,11 +1,9 @@
-from fastapi import APIRouter
-
 from app.core.logger import logger
-
 from app.nearest_hawkercentre.models import InputLatLon
 from app.nearest_hawkercentre.models import NearestHawkerCentre
 from app.nearest_hawkercentre.models import NearestHawkerCentreEndpointLog
 from app.nearest_hawkercentre.utils import get_nearest_hawkercentre
+from fastapi import APIRouter
 
 router = APIRouter()
 

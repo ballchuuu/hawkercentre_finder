@@ -1,5 +1,6 @@
-from pydantic import BaseModel
 from typing import List
+
+from pydantic import BaseModel
 
 ###
 # Nearest HawkerCentre Endpoint Input
@@ -19,7 +20,7 @@ class HawkerCentre(BaseModel):
 class NearestHawkerCentre(BaseModel):
     results: List[HawkerCentre] = []
 
-### 
+###
 # Logging
 ###
 class NearestHawkerCentreEndpointLog(BaseModel):
