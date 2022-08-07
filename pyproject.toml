@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "hawkercentre_finder"
+version = "0.1.0"
+description = ""
+authors = ["vinniechu <vinniechuyixuan@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+notebook = "^6.4.12"
+pandas = "^1.4.3"
+geopandas = "^0.11.1"
+lxml = "^4.9.1"
+beautifulsoup4 = "^4.11.1"
+pydantic = "^1.9.1"
+sklearn = "^0.0"
+geopy = "^2.2.0"
+fastapi = "^0.79.0"
+asyncio = "^3.4.3"
+uvicorn = "^0.18.2"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^5.0.4"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
