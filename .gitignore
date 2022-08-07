@@ -1,0 +1,9 @@
+__pycache__
+.ipynb.checkpoints
+.pytest_cache
+
+# coverage files
+htmlcov
+junit
+.coverage
+coverage.xml
