@@ -9,13 +9,14 @@ To better determine which method to use to obtain the nearest hawkercentres, a f
 2. Brute force by SQLite query
 3. BallTree algorithm (Sklearn)
 
-After evaluating the methods based on accuracy and latency, `Brute force by SQLite query` was chosen as the number of hawkercentres is small hence choosing this method would provide accuracy with good latency (i.e. below 30ms). 
+After evaluating the methods based on accuracy and latency, `Brute force by SQLite query` was chosen as the number of hawkercentres is small. Hence choosing this method would provide accuracy with good latency (i.e. below 30ms). 
 
 However, it is notable that the BallTree algorithm had the fastest latency but lost in terms of accuracy when compared with the brute force which was held as the ground truth. 
-* Mean Average Precision @ 5 was ~0.75, which means within the top 5 results, the algorithm was only accurate in returning the top 5 predictions 75% of the item irregardless of position.
+* Mean Average Precision @ 5 was ~0.75 - which means within the top 5 results, the algorithm was only accurate in returning the top 5 predictions 75% of the item irregardless of position.
 
 For more details, you can look into: ![Jupyter Notebook](/notebooks/Methods%20for%20Distance%20Calculation.ipynb)
-![Good article on the tradeoffs] (https://towardsdatascience.com/tree-algorithms-explained-ball-tree-algorithm-vs-kd-tree-vs-brute-force-9746debcd940)
+
+![Good article on the tradeoffs](https://towardsdatascience.com/tree-algorithms-explained-ball-tree-algorithm-vs-kd-tree-vs-brute-force-9746debcd940)
 
 ## Instructions to run the application
 ### Set up environment
