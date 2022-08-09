@@ -14,9 +14,9 @@ After evaluating the methods based on accuracy and latency, `Brute force by SQLi
 However, it is notable that the BallTree algorithm had the fastest latency but lost in terms of accuracy when compared with the brute force which was held as the ground truth. 
 * Mean Average Precision @ 5 was ~0.75 - which means within the top 5 results, the algorithm was only accurate in returning the top 5 predictions 75% of the item irregardless of position.
 
-For more details, you can look into: ![Jupyter Notebook](/notebooks/Methods%20for%20Distance%20Calculation.ipynb)
+For more details, you can look into: [Jupyter Notebook](/notebooks/Methods%20for%20Distance%20Calculation.ipynb)
 
-![Good article on the tradeoffs](https://towardsdatascience.com/tree-algorithms-explained-ball-tree-algorithm-vs-kd-tree-vs-brute-force-9746debcd940)
+Good article on the tradeoffs: [Medium Article](https://towardsdatascience.com/tree-algorithms-explained-ball-tree-algorithm-vs-kd-tree-vs-brute-force-9746debcd940)
 
 ## Instructions to run the application
 ### Set up environment
