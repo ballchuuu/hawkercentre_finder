@@ -1,2 +1,2 @@
 [run]
-omit = src/preparation_data/
+omit = src/preparation_data/, src/app/main.py
