@@ -1,12 +1,10 @@
-from app.nearest_hawkercentre.models import InputLatLon
-
 router_prefix = "/finder"
 
 class TestNearestHawkerCentre:
     def test_successful_endpoint(self, auth_client):
         response = auth_client.post(
             f"{router_prefix}/nearest_hawkercentre",
-            json = {
+            json={
                 "latitude": 1.3,
                 "longitude": 103.9,
                 "num_hawkercentres": 5
@@ -18,7 +16,7 @@ class TestNearestHawkerCentre:
     def test_wrong_input(self, auth_client):
         response = auth_client.post(
             f"{router_prefix}/nearest_hawkercentre",
-            json = {
+            json={
                 "test": 0
             }
         )
@@ -27,8 +25,8 @@ class TestNearestHawkerCentre:
 
     def test_wrong_endpoint(self, auth_client):
         response = auth_client.post(
-            f"/test",
-            json = {
+            "/test",
+            json={
                 "test": 0
             }
         )

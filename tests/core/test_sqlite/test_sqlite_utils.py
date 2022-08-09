@@ -1,5 +1,6 @@
-from app.core.sqlite.utils import get_distance
 import math
+
+from app.core.sqlite.utils import get_distance
 
 def test_distance():
 
@@ -10,13 +11,13 @@ def test_distance():
     longitude_radians = math.radians(1.0)
     latitude_radians_sin = math.sin(math.radians(2.0))
 
-    result = get_distance(    
+    result = get_distance(
         input_latitude,
         input_longitude,
         latitude_radians_cos,
         longitude_radians,
         latitude_radians_sin)
-    
+
     # result is based on US National Hurriance Centre website
     # https://www.nhc.noaa.gov/gccalc.shtml
     assert round(result) == 111

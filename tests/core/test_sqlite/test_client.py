@@ -1,4 +1,5 @@
 import sqlite3
+
 from app.core.sqlite.client import Sqlite3
 
 def test_db_sqlite_client():
@@ -8,8 +9,8 @@ def test_db_sqlite_client():
     # check if get_distance function exists
     query = """
     SELECT EXISTS
-        (SELECT 1 
-            FROM PRAGMA_FUNCTION_LIST 
+        (SELECT 1
+            FROM PRAGMA_FUNCTION_LIST
         WHERE name = 'get_distance');
     """
 
@@ -19,5 +20,3 @@ def test_db_sqlite_client():
 
     # close conn
     test_client.conn.close()
-
-
