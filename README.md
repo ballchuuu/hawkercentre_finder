@@ -4,6 +4,19 @@ This repository contains the codebase for a hawker centre finder by distance.
 ## Components of application
 ![Solution components](images/solution_components.png)
 
+To better determine which method to use to obtain the nearest hawkercentres, a few algorithms were tested, namely:
+1. Brute force by python in-memory function
+2. Brute force by SQLite query
+3. BallTree algorithm (Sklearn)
+
+After evaluating the methods based on accuracy and latency, `Brute force by SQLite query` was chosen as the number of hawkercentres is small hence choosing this method would provide accuracy with good latency (i.e. below 30ms). 
+
+However, it is notable that the BallTree algorithm had the fastest latency but lost in terms of accuracy when compared with the brute force which was held as the ground truth. 
+* Mean Average Precision @ 5 was ~0.75, which means within the top 5 results, the algorithm was only accurate in returning the top 5 predictions 75% of the item irregardless of position.
+
+For more details, you can look into: ![Jupyter Notebook](/notebooks/Methods%20for%20Distance%20Calculation.ipynb)
+![Good article on the tradeoffs] (https://towardsdatascience.com/tree-algorithms-explained-ball-tree-algorithm-vs-kd-tree-vs-brute-force-9746debcd940)
+
 ## Instructions to run the application
 ### Set up environment
 This respository is using [poetry](https://python-poetry.org/) to manage package dependencies.
@@ -48,6 +61,7 @@ python -m pytest tests --cov-config=tests/.coveragerc --envfile=tests/.test.env 
 ```
 
 ## Directory
+```bash
 ├── .github
 │   ├── workflows
         └── ci.yaml # GitHub Actions CI pipeline
@@ -84,6 +98,7 @@ python -m pytest tests --cov-config=tests/.coveragerc --envfile=tests/.test.env 
 ├── poetry.lock
 ├── pyproject.toml
 └── README.md
+```
 
 ## Future Work
 Some future work that would like to be explored:
