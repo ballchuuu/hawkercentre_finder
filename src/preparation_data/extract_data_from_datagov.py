@@ -18,7 +18,7 @@ def download_zip(url: str, save_dir: str) -> None:
         urllib.request.urlretrieve(url, save_dir)
         print(f"Downloaded temp.zip from {url}")
     except Exception as e:
-        raise(e)
+        raise (e)
 
     return
 
