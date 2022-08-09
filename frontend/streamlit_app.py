@@ -1,12 +1,12 @@
-import streamlit as st
 import requests
+import streamlit as st
 
-### 
+###
 # Set app config
 ###
 st.set_page_config(
-    page_title="Singapore Hawker Centre Finder", 
-    page_icon="🕵️", 
+    page_title="Singapore Hawker Centre Finder",
+    page_icon="🕵️",
     layout="centered"
 )
 st.title("🕵️ Singapore Hawker Centre Finder")
@@ -16,13 +16,11 @@ st.title("🕵️ Singapore Hawker Centre Finder")
 ##
 with st.expander("🛈 About this app", expanded=True):
 
-    st.write(
-        """     
-    This *Singapore Hawker Centre Finder* app returns you at least 5 hawker centres that is \
-    closest to you based on the provided latitude and longitude coordinates. \
-    Give it a shot and fill up that tummy with delicious hawker food!
-	    """
-    )
+    st.write("""
+        This *Singapore Hawker Centre Finder* app returns you at least 5 hawker centres\
+        that is closest to you based on the provided latitude and longitude \
+        coordinates. Give it a shot and fill up that tummy with delicious hawker food!
+    """)
 
     st.markdown("")
 
@@ -37,13 +35,13 @@ with st.form(key="finder"):
     latitude = cols[0].number_input(label="Latitude", value=1.3182)
     longitude = cols[1].number_input(label="Longitude", value=103.8931)
     num_hawkercentres = cols[2].slider(
-            "# of hawker centres",
-            min_value=5,
-            max_value=152,
-            value=5,
-            help="You can choose how many hawker centres you would like to search for. \
-                Between 5 and 152, default number is 5",
-        )
+        "# of hawker centres",
+        min_value=5,
+        max_value=152,
+        value=5,
+        help="You can choose how many hawker centres you would like to search for. \
+            Between 5 and 152, default number is 5",
+    )
     submitted = st.form_submit_button(label="Submit")
 
 ###
@@ -73,7 +71,7 @@ if submitted:
                     st.image(hawkercentres[num]['photourl'], width=200)
                 st.write("---")
 
-    except Exception as e:
+    except Exception:
         # Error handling if the fastapi endpoint fails
         st.error("Sorry, seems like there is a problem with our application! \
             Please come back later and try again!")

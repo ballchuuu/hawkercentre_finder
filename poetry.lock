@@ -1802,7 +1802,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "d149d34434a29bae1674ed2853cc79a00347a2e4e16cb0b6ce36ed220e76c92c"
+content-hash = "d149d34434a29bae1674ed2853cc79a00347a2e4e16cb0b6ce36ed220e76c92c" # pragma: allowlist secret
 
 [metadata.files]
 altair = [
