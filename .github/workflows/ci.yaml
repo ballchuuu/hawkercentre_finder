@@ -12,7 +12,7 @@ on:
 
 jobs:
   lint:
-    runs-on: default
+    runs-on: ubuntu-latest
     steps:
       - name: Checking out the repository
         uses: actions/checkout@v2
@@ -31,7 +31,7 @@ jobs:
           # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
           flake8 . --count --statistics
   test:
-    runs-on: default
+    runs-on: ubuntu-latest
     steps:
       - name: Checking out the repository
         uses: actions/checkout@v2
