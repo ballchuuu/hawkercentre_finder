@@ -34,12 +34,12 @@ Example of streamlit application: ![Solution components](images/streamlit_app.jp
 
 
 ## CI Pipeline
-Continuous integration pipeline has been added using GitHub Actions. 
+Continuous integration pipeline has been added using GitHub Actions.
 
 For every pull request to the `main` branch, you will need to ensure that:
-1. Lint: Code is following flake8 conventions 
+1. Lint: Code is following flake8 conventions
 ```
-flake8 . 
+flake8 .
 ```
 2. Testcases: Ensure 100% coverage for FastApi app
 ```
@@ -79,7 +79,7 @@ python -m pytest tests --cov-config=tests/.coveragerc --envfile=tests/.test.env 
 ├── .flake8 # linting requirements
 ├── .gitignore
 ├── .pre-commit-config.yaml # precommit hooks used
-├── Dockerfle.fastapi # Dockerfile if deployment is needed 
+├── Dockerfle.fastapi # Dockerfile if deployment is needed
 ├── Dockerfle.streamlit # Dockerfile  if deployment is needed
 ├── poetry.lock
 ├── pyproject.toml
