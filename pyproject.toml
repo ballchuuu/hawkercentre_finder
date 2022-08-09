@@ -17,10 +17,13 @@ geopy = "^2.2.0"
 fastapi = "^0.79.0"
 asyncio = "^3.4.3"
 uvicorn = "^0.18.2"
+python-dotenv = "^0.20.0"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^5.0.4"
 pre-commit = "^2.20.0"
+pytest-cov = "^3.0.0"
+pytest-dotenv = "^0.5.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

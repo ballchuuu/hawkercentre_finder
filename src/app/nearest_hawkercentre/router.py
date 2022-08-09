@@ -8,7 +8,7 @@ from fastapi import APIRouter
 router = APIRouter()
 
 @router.post("/nearest_hawkercentre", response_model=NearestHawkerCentre)
-async def nearest_hawkercentre(
+async def nearest_hawkercentre_endpoint(
     param: InputLatLon
 ):
 

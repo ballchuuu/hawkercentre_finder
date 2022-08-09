@@ -15,7 +15,7 @@ class InputLatLon(BaseModel):
 ###
 class HawkerCentre(BaseModel):
     name: str = ""
-    photourl: str = ""
+    photourl: str = None
 
 class NearestHawkerCentre(BaseModel):
     results: List[HawkerCentre] = []
