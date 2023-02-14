@@ -19,9 +19,3 @@ repos:
     rev: v2.3.6
     hooks:
       - id: reorder-python-imports
-  - repo: local
-    hooks:
-      - id: sb-git-hooks
-        name: sb-git-hooks
-        language: system
-        entry: bash -c 'if [[ -z $SB_GIT_HOOKS_DIR ]]; then exit 0; else $SB_GIT_HOOKS_DIR/hooks/pre-commit; fi'
